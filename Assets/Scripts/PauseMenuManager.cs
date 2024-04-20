@@ -8,24 +8,35 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();       
+            Debug.Log("Escape pressed. Menu active: " + pauseMenuUI.activeSelf);
+            if (pauseMenuUI.activeSelf)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
     public void ResumeGame()
     {
+        Debug.Log("Resuming game.");
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f; // Возобновляет нормальное течение времени
+        Time.timeScale = 1f;
     }
 
     public void PauseGame()
     {
+        Debug.Log("Pausing game.");
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f; // Останавливает игру
+        Time.timeScale = 0f;
     }
 
     public void QuitGame()
     {
-        Application.Quit(); // Закрытие игры
+        Debug.Log("Quitting game.");
+        Application.Quit();
     }
 }
