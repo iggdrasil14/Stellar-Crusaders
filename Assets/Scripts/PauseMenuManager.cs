@@ -8,8 +8,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Escape pressed. Menu active: " + pauseMenuUI.activeSelf);
-            if (pauseMenuUI.activeSelf)
+            //Debug.Log("Escape pressed. Menu active: " + pauseMenuUI.activeInHierarchy);
+            if (pauseMenuUI.activeInHierarchy)
             {
                 ResumeGame();
             }
