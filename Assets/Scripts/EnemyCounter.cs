@@ -13,6 +13,10 @@ public class EnemyCounter : MonoBehaviour
     {
         UpdateEnemyCountDisplay(); // Обновляем дисплей при старте
     }
+    public bool IsBossTime()
+    {
+        return destroyedEnemyCount % 3 == 0;
+    }
 
     public void EnemyDestroyed() // Метод для вызова при уничтожении врага
     {

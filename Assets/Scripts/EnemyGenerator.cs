@@ -1,6 +1,3 @@
-// 21.04.2024 AI-Tag
-// This was created with assistance from Muse, a Unity Artificial Intelligence product
-
 using System.Collections;
 using UnityEngine;
 
@@ -48,12 +45,25 @@ public class EnemyGenerator : MonoBehaviour
 
     private void EnemyRandomGenerator(float scale, float health)
     {
-        GameObject Asteroid = Instantiate(asteroidPrefab, GetRandomPoint(), Quaternion.identity);
-        Asteroid.transform.localScale = asteroidPrefab.transform.localScale * scale;
 
-        enemyHP enemyHp = Asteroid.GetComponent<enemyHP>();
-        enemyHp.enemyCounter = eCounter;
-        enemyHp.health = health;
+        if (eCounter.IsBossTime())
+        {
+            CreateBoss();
+        }
+        else
+        {
+            GameObject Asteroid = Instantiate(asteroidPrefab, GetRandomPoint(), Quaternion.identity);
+            Asteroid.transform.localScale = asteroidPrefab.transform.localScale * scale;
+
+            enemyHP x = Asteroid.GetComponent<enemyHP>();
+            x.enemyCounter = eCounter;
+            x.health = health;
+        }
+    }
+
+    private void CreateBoss()
+    {
+
     }
 
     public Vector3 GetRandomPoint()

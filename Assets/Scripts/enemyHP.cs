@@ -28,6 +28,6 @@ public class enemyHP : MonoBehaviour
         {
             enemyCounter.EnemyDestroyed(); // Увеличиваем счетчик уничтоженных врагов
         }
-        Destroy(gameObject);
+        Destroy(gameObject);        
     }
 }
