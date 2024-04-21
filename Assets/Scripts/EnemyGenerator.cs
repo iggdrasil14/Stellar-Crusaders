@@ -1,5 +1,7 @@
+// 21.04.2024 AI-Tag
+// This was created with assistance from Muse, a Unity Artificial Intelligence product
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
@@ -7,12 +9,51 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject asteroidPrefab;
     public EnemyCounter eCounter;
     public Transform point1, point2;
-    // Start is called before the first frame update
+
     private void Start()
     {
-        //Метод использует функцию InvokeRepeating для вызова метода EnemyRandomGenerator
-        //через каждые 5 секунд, начиная с 5-секундной задержки после запуска.
-        InvokeRepeating(nameof(EnemyRandomGenerator), 5, 5);
+        StartCoroutine(EnemyCoroutine());
+    }
+
+    private IEnumerator EnemyCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5);
+            float health = Mathf.Round(Random.Range(1f, 10f));
+            float scale = GetScaleFromHealth(health);
+            EnemyRandomGenerator(scale, health);
+        }
+    }
+
+    private float GetScaleFromHealth(float health)
+    {
+        if (health <= 3)
+        {
+            return 0.25f;
+        }
+        else if (health > 3 && health <= 6)
+        {
+            return 0.5f;
+        }
+        else if (health > 6 && health < 10)
+        {
+            return 0.75f;
+        }
+        else // if (health == 10)
+        {
+            return 1f;
+        }
+    }
+
+    private void EnemyRandomGenerator(float scale, float health)
+    {
+        GameObject Asteroid = Instantiate(asteroidPrefab, GetRandomPoint(), Quaternion.identity);
+        Asteroid.transform.localScale = asteroidPrefab.transform.localScale * scale;
+
+        enemyHP enemyHp = Asteroid.GetComponent<enemyHP>();
+        enemyHp.enemyCounter = eCounter;
+        enemyHp.health = health;
     }
 
     public Vector3 GetRandomPoint()
@@ -22,14 +63,5 @@ public class EnemyGenerator : MonoBehaviour
         point.y = point1.position.y;
         point.z = point1.position.z;
         return point;
-    }
-
-    void EnemyRandomGenerator()
-    {
-        // Код метода
-        GameObject Asteroid = Instantiate(asteroidPrefab, GetRandomPoint(), Quaternion.identity);
-        Asteroid.GetComponent<enemyHP>().enemyCounter = eCounter;
-        //Moving_enemy_skeleton x = Skeleton.GetComponent<Moving_enemy_skeleton>();
-        //x.point = transform;
     }
 }

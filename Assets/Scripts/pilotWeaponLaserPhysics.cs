@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pilotWeaponLaserPhysics : MonoBehaviour
 {
-    public float damage = 10f; // Урон, который наносит лазер
+    public float damage = 2f; // Урон, который наносит лазер
 
     private void OnTriggerEnter(Collider other)
     {

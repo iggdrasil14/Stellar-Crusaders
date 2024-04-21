@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class enemyHP : MonoBehaviour
 {
     public EnemyCounter enemyCounter;
-    public float health = 50f; // Çהמנמגüו גנאדא
+    public float health;
+
+    public void Start()
+    {
+        health = Mathf.Round(Random.Range(1f, 10f));
+    }
 
     public void TakeDamage(float damage)
     {

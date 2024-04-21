@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 962408042116451970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.6, z: -119.17}
+  m_LocalPosition: {x: 0, y: 13.46, z: -119.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302679621b26a2548aa783ca7041dd21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCounter: {fileID: 0}
   health: 50
 --- !u!114 &1423895515068060065
 MonoBehaviour:
@@ -76,12 +77,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.91, y: 9.532805, z: 3.292529}
-  m_Center: {x: -0.77, y: 3.09, z: 21.72}
+  m_Size: {x: 8.149451, y: 13.82, z: 6.6865234}
+  m_Center: {x: 0, y: 7.59, z: 20.023003}
 --- !u!1001 &3962231504847828412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,11 +125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992838361154946, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.18257892
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4992838361154946, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.98319125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4992838361154946, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
       propertyPath: m_LocalRotation.y
@@ -140,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992838361154946, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 518.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4992838361154946, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
