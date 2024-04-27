@@ -7,7 +7,7 @@ using TMPro;
 public class EnemyCounter : MonoBehaviour
 {
     public TextMeshProUGUI enemyCountText; // —сылка на UI элемент Text дл€ отображени€ количества уничтоженных врагов
-    private int destroyedEnemyCount = 0; // —четчик уничтоженных врагов
+    private int destroyedEnemyCount = 1; // —четчик уничтоженных врагов
 
     void Start()
     {

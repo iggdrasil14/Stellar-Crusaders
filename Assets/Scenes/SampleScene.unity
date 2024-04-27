@@ -1846,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1430374184068749007, guid: bffac15ab19a54a4dad63ea5b57a6b0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.89
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1430374184068749007, guid: bffac15ab19a54a4dad63ea5b57a6b0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2078,6 +2078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 962408042116451970, guid: 40aeb1ba1ebe15d419191808105ec3cb, type: 3}
+  bossPrefab: {fileID: 8450884038752855281, guid: 772d292c8e4b8d94186f0a779e3c86a4, type: 3}
   eCounter: {fileID: 1689742688}
   point1: {fileID: 1702787577}
   point2: {fileID: 2075367680}

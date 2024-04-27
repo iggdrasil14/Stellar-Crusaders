@@ -18,7 +18,7 @@ public class pilotWeaponLaserDamage : MonoBehaviour
 
     public void ShootLaser()
     {
-        GameObject laser = Instantiate(pilotWeaponLaser, firePoint.position, firePoint.rotation);
+        GameObject laser = Instantiate(pilotWeaponLaser, firePoint.position, firePoint.rotation);   
         Rigidbody rb = laser.GetComponent<Rigidbody>();
         rb.velocity = firePoint.forward * laserSpeed; // Дает лазеру скорость в направлении firePoint
     }

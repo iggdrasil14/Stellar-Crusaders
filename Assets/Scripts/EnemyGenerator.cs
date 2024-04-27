@@ -4,9 +4,10 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour
 {
     public GameObject asteroidPrefab;
+    public GameObject bossPrefab;
     public EnemyCounter eCounter;
     public Transform point1, point2;
-
+    
     private void Start()
     {
         StartCoroutine(EnemyCoroutine());
@@ -63,7 +64,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void CreateBoss()
     {
-
+        GameObject Boss = Instantiate(bossPrefab, GetRandomPoint(), Quaternion.identity);
     }
 
     public Vector3 GetRandomPoint()

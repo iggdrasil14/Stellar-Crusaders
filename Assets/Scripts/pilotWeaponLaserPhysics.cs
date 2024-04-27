@@ -17,5 +17,14 @@ public class pilotWeaponLaserPhysics : MonoBehaviour
             }
             Destroy(gameObject); // Уничтожаем лазер после попадания
         }
+        if (other.CompareTag("Enemy")) // Проверяем, является ли объект врагом
+        {
+            BossHP bossHP = other.GetComponent<BossHP>(); // Получаем компонент Enemy
+            if (bossHP != null)
+            {
+                bossHP.TakeDamage(damage); // Наносим урон
+            }
+            Destroy(gameObject); // Уничтожаем лазер после попадания
+        }
     }
 }
